@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>С Днём Матери! 🌷</title>
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Красивый розовый градиентный фон */
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #feada6 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .card {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 24px;
+    padding: 30px 24px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(214, 51, 108, 0.2);
+  }
+  .heart {
+    font-size: 56px;
+    animation: pulse 1.2s infinite;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.18); }
+    100% { transform: scale(1); }
+  }
+  h1 { color: #d6336c; font-size: 24px; margin: 10px 0; }
+  p { color: #495057; font-size: 17px; line-height: 1.5; }
+  button {
+    background: linear-gradient(45deg, #ff4d6d, #ff758f);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 15px;
+    box-shadow: 0 6px 15px rgba(255, 77, 109, 0.35);
+  }
+  button:active { transform: scale(0.96); }
+  #compliment {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #c9184a;
+    min-height: 48px;
+    font-size: 18px;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="heart">❤️</div>
+    <h1>С Днём Матери, Мамочка!</h1>
+    <p>Я сам написал эту программу специально для тебя. Нажимай на кнопку ниже, чтобы собрать свой букет!</p>
+    <button onclick="nextCompliment()">Получить комплимент 🌸</button>
+    <div id="compliment"></div>
+  </div>
+
+  <script>
+    const list = [
+      "Ты самая добрая и заботливая на свете! 🌸",
+      "Твоя улыбка согревает лучше любого солнца! ☀️",
+      "Спасибо за твою бесконечную поддержку и тепло! 💖",
+      "Ты вдохновляешь меня каждый день! ✨",
+      "Я тебя очень сильно люблю! Иван❤️"
+    ];
+    let index = 0;
+    function nextCompliment() {
+      document.getElementById("compliment").innerText = list[index];
+      index = (index + 1) % list.length;
+    }
+  </script>
+</body>
+</html>
